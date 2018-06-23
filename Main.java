@@ -1,9 +1,10 @@
-package forca;
+package jogo;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+	private static int i = 0;
 	
 	public static void main(String... args) {
 		Roleta roleta = new Roleta();
@@ -16,12 +17,15 @@ public class Main {
 			System.out.println(e.getMessage());
 			main();
 		}
-		
-		roleta.Roleta();
+
+		roleta.iniciarRoleta();
 		roleta.rodarRoleta();
-		//roleta.mostrarResultados();
+		
 		System.out.println("player 1 " + pl.getNome());
-		jogo.Jogar(roleta.getAnimal());
-		//System.out.println(roleta.getAnimais());
+		jogo.Jogar(roleta.getAnimais());
+	
+		Rank rank = new Rank(jogo.Pontos(), pl.getNome());
+		rank.mostrarResultados();
+
 	}
 }
