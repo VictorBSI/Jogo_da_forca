@@ -1,4 +1,4 @@
-package forca;
+package jogo;
 
 public class Boneco <T>{
 	private T cabeca;
@@ -27,6 +27,10 @@ public class Boneco <T>{
 	}
 	public void setB_drt(T b_drt) {
 		this.b_drt = b_drt;
+	}
+	
+	public String toString() {
+		return "Boneco: " + this.cabeca + this.tronco + this.b_drt + this.b_esq + this.p_drt + this.p_esq; 
 	}
 
 	
