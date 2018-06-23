@@ -1,4 +1,4 @@
-package forca;
+package jogo;
 
 import java.security.SecureRandom;
 import java.util.Random;
