@@ -1,12 +1,14 @@
-package forca;
+package jogo;
 
 import java.util.Scanner;
 
 //pq um jogador é um cadastro???
 public class Jogador extends Cadastro {
-	private int vitorias, derrotas, pontos;
-	private String nome, letra;
+	private int vitorias, derrotas, pontos = 6;
+	private String nome;
+	private char letra;
 	private Roleta row;
+	private boolean acerto, erro;
 	public Jogador() {
 		super();
 	}
@@ -24,21 +26,38 @@ public class Jogador extends Cadastro {
 		this.nome = nome;
 	}
 	
-	public String escolherLetra(String letra){
-		return letra;
+	public void escolherLetra(){
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("\nDigite uma letra: ");
+		this.letra = teclado.next().charAt(0);
 	}
 	
-	public void Acertar() {
-		
-	}
+	/*public void Acertar(boolean acerto) {
+		this.acerto = acerto;
+		if (!acerto) {
+			pontos++;
+		}
+	}*/
 	
 	public String getNome() {
 		return nome;
 	}
 	
-	public void Errar() {
-		
+	public char getLetra() {
+		return this.letra;
 	}
 	
-}
+	public int getPontos() {
+		return pontos;
+	}
 	
+	public void Errar(boolean erro) {
+		this.erro = erro;
+		if (erro) {
+			pontos--;
+		}
+	}
+	
+
+	
+}
