@@ -30,13 +30,12 @@ public class Jogo implements Resultados{
 		
 	}
 	
-	public void Jogar(String animais) {
-			
+	public void Jogar(String tema) {
 			
 
-			char[] traco = new char[animais.length()];;
+			char[] traco = new char[tema.length()];;
 			
-				for( int i = 0; i < animais.length(); i++) {
+				for( int i = 0; i < tema.length(); i++) {
 					traco[i] = '_';
 					System.out.print(traco[i]+" ");		
 				}
@@ -45,24 +44,20 @@ public class Jogo implements Resultados{
 					/*System.out.println("\nDigite uma letra: ");
 					char palavras = teclado.next().charAt(0);*/
 					jogador.escolherLetra();
-					
-					
-					
-					for( int i = 0; i < animais.length(); i++) {
+		
+					for( int i = 0; i < tema.length(); i++) {
 						
 						if (jogador.getLetra() == traco[i]) {
 							System.out.print(traco[i]+" ");
 							continue;
 						}
-						if( jogador.getLetra()  == animais.charAt(i)) {
+						if( jogador.getLetra()  == tema.charAt(i)) {
 							traco[i] = jogador.getLetra() ;
 							acerto++;
 							erro = false;
 							
 						}
-						
-						
-						
+	
 						System.out.print(traco[i]+ " ");	
 					}
 					if (erro == true) {
@@ -105,37 +100,29 @@ public class Jogo implements Resultados{
 						}
 						
 							System.out.println("\n\n"+boneco.toString());				
-						
-						
 
 					}
 					
 					if (cont == 6) {
-						System.out.println("\n\nVocê perdeu!");
+						System.out.println("\nVocê perdeu!");
 						achou = false;
 						
-						
+						System.out.println("\nA resposta era " + tema);
 						
 					}
 
-					if(acerto == animais.length()) {
-						System.out.println("\n\nVocê acertou!");
+					if(acerto == tema.length()) {
+						System.out.println("\nVocê acertou!");
 						achou = false;
 						//jogador.Acertar(achou);
-						
+						System.out.println("\nVocê fez " + jogador.getPontos() + " pontos!\n\n");
 						
 					}
 					
 				}
-				
-				System.out.println("\n\nVocê fez " + jogador.getPontos() + " pontos!\n\n");
-				
-				
-				
+			
 	}
-	
-	
-	
+
 	public int Pontos() {
 		return jogador.getPontos();
 	}
