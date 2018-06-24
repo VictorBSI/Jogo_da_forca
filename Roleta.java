@@ -3,7 +3,7 @@ package jogo;
 import java.security.SecureRandom;
 import java.util.Random;
 
-public class Roleta extends Jogo implements Resultados{
+public class Roleta implements Resultados{
 	private int tamanho1;
 	private int tamanho2;
 	private String[] temas, escolhido, nome;
