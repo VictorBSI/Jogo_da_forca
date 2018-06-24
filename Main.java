@@ -11,6 +11,7 @@ public class Main {
 		Jogo jogo = new Jogo();
 		Jogador pl = new Jogador();
 		
+		
 		try {
 			pl.cadastroNome();
 		}catch(IllegalArgumentException e) {
@@ -18,12 +19,13 @@ public class Main {
 			main();
 		}
 
-		roleta.iniciarRoleta();
-		roleta.rodarRoleta();
+		//roleta.iniciarRoleta();
+		
 		
 		System.out.println("player 1 " + pl.getNome());
-		jogo.Jogar(roleta.getAnimais());
-	
+		roleta.rodarRoletaTemas();
+		System.out.println("\n" + roleta.getTemanome() + "\n");
+		jogo.Jogar(roleta.rodarRoletaEscolhido(roleta.getTemas()));
 		Rank rank = new Rank(jogo.Pontos(), pl.getNome());
 		rank.mostrarResultados();
 
