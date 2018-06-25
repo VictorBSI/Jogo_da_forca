@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Main {
 	
 	public static void main(String[] args) {
-		
+		Temas tema = new Temas();
+		tema.mostrarResultados();
 		
 		int sentinela = 0;
 		Rank rank = new Rank();
@@ -15,6 +16,7 @@ public class Main {
 			Boneco boneco = new Boneco();
 			Jogador pl = new Jogador();
 			Jogo jogo = new Jogo(pl, boneco);
+			
 		try {
 			pl.cadastroNome();
 		}catch(IllegalArgumentException e) {
@@ -30,7 +32,7 @@ public class Main {
 		} while (sentinela == 1);
 			rank.adicionar(pl);
 		}
-		rank.mostrarRank();
+		rank.mostrarResultados();
 
 	}
 }
