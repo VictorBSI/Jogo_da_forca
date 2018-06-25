@@ -3,7 +3,7 @@ package jogo;
 import java.security.SecureRandom;
 import java.util.Random;
 
-public class Roleta implements Resultados{
+public class Roleta{
 	private int tamanho1;
 	private int tamanho2;
 	private String[] temas, escolhido, nome;
@@ -57,12 +57,6 @@ public class Roleta implements Resultados{
 		return this.temanome;
 	}
 	
-	@Override
-	public void mostrarResultados(){
-		//SecureRandom random = new SecureRandom();
-		//this.tamanho = animais.length;
-		System.out.println(tamanho1);
-	}
 	
 	public String rodarRoletaEscolhido(String[] escolhido) {
 		SecureRandom random = new SecureRandom();
