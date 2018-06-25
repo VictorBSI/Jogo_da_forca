@@ -26,7 +26,7 @@ public class Jogo implements Resultados{
 			Scanner teclado = new Scanner(System.in);
 			return teclado.nextInt();
 		}
-		public void montarJogo(Roleta roleta) {
+	/*	public void montarJogo(Roleta roleta) {
 		
 		}
 		
@@ -36,7 +36,7 @@ public class Jogo implements Resultados{
 		
 		public void terminarJogo(Jogador player) {
 			
-		}
+		}*/
 	
 
 	@Override
@@ -51,7 +51,7 @@ public class Jogo implements Resultados{
 		boolean erro;
 		System.out.printf("player %s \n", jogador.getNome());
 		roleta.rodarRoletaTemas();
-		System.out.println("\n" + roleta.getTemanome() + "\n");		
+		System.out.println("\nTema: " + roleta.getTemanome() + "\n");		
 		String tema = roleta.rodarRoletaEscolhido(roleta.getTemas());
 		char[] traco = new char[tema.length()];
 		for (int i = 0; i < tema.length(); i++) {
@@ -71,6 +71,7 @@ public class Jogo implements Resultados{
 					/*System.out.println("\nDigite uma letra: ");
 					char palavras = teclado.next().charAt(0);*/
 					jogador.escolherLetra();
+					
 	
 					for( int i = 0; i < tema.length(); i++) {
 						
@@ -87,7 +88,7 @@ public class Jogo implements Resultados{
 						System.out.print(traco[i]+ " ");	
 					}
 					if (erro == true) {
-						jogador.Errar(erro);
+						//jogador.Errar(erro);
 						++cont;
 						switch(cont) {
 						case 1:
@@ -133,23 +134,23 @@ public class Jogo implements Resultados{
 						System.out.println("\n\nVocê perdeu!");
 						achou = false;
 						jogador.setDerrotas();
-						System.out.println("\nA resposta era " + tema);
+						System.out.println("\nA resposta era " + tema + "\n");
 						
 					}
 
 					if(acerto == tema.length()) {  //Se o player acertar todas as letras da palavra sorteada, achou recebe false e o loop para
-						System.out.println("\n\nVocê acertou!");
+						System.out.println("\n\nVocê ganhou!\n");
 						achou = false;
 						jogador.setVitorias();
-						System.out.println("\nVocê fez " + jogador.getPontos() + " pontos!\n\n");
-						
+						//System.out.println("\nVocê fez " + jogador.getPontos() + " pontos!\n\n");
+						//jogador.Acertar(false);
 					}
 					
 				}
 			
 	}
 
-	public int Pontos() {
+	/*public int Pontos() {
 		return jogador.getPontos();
-	}
+	}*/
 }
