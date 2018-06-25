@@ -2,16 +2,13 @@ package jogo;
 
 import java.util.Scanner;
 
-//pq um jogador é um cadastro???
 public class Jogador extends Cadastro implements Comparable<Jogador> {
 	private int vitorias, derrotas, pontos = 6;
 	private String nome;
 	private char letra;
-	private Roleta row;
-	private boolean acerto, erro;
-	public Jogador() {
+	/*public Jogador() {
 		super();
-	}
+	}*/
 
 	@Override
 	public void cadastroNome() {
@@ -67,13 +64,13 @@ public class Jogador extends Cadastro implements Comparable<Jogador> {
 		
 	}
 	
-	
-	/*public void Acertar(boolean acerto) {
+	/*
+	public void Acertar(boolean acerto) {
 		this.acerto = acerto;
 		if (!acerto) {
-			pontos++;
+			pontos += 6;
 		}
-	}*/
+	}
 	
 	
 	public int getPontos() {
@@ -86,7 +83,7 @@ public class Jogador extends Cadastro implements Comparable<Jogador> {
 			pontos--;
 		}
 	}
-	
+	*/
 
 	
 }
