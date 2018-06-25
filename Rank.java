@@ -2,7 +2,7 @@ package jogo;
 
 import java.util.*;
 
-class Rank {
+class Rank implements Resultados{
 	List<Jogador> rank = new ArrayList<>();
 
 	public void adicionar(Jogador j) {
@@ -15,8 +15,8 @@ class Rank {
 	public List<Jogador> getLista() {
 		return rank;
 	}
-
-	public void mostrarRank() {
+	@Override
+	public void mostrarResultados() {
 		Collections.sort(rank);
 		Collections.reverse(rank);
 		System.out.println("Posição | Nome | Vitórias | Derrotas |");
